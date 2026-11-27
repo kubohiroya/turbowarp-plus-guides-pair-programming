@@ -1,0 +1,79 @@
+{
+  "ok": true,
+  "headless": true,
+  "editorRevision": "9410ad44f4098fa7b822fca14d95bf6243046d28",
+  "artifact": {
+    "filename": "pair-programming-4.0.sb3",
+    "bytes": 5254542,
+    "sha256": "d2959ea92de156bd39fdcf274391599da860e53ae7c08ebfa01696a23f1d2385"
+  },
+  "checks": [
+    {
+      "unit": "roles",
+      "guide": "click"
+    },
+    {
+      "unit": "roles",
+      "paths": [
+        "selected",
+        "retry",
+        "correct",
+        "menu"
+      ]
+    },
+    {
+      "unit": "goal",
+      "paths": [
+        "selected",
+        "retry",
+        "correct",
+        "menu"
+      ]
+    },
+    {
+      "unit": "talk-edit",
+      "guide": "event:workspace.changed"
+    },
+    {
+      "unit": "talk-edit",
+      "practice": "G produces 6 clones after input edit and all clones are released"
+    },
+    {
+      "unit": "talk-edit",
+      "paths": [
+        "selected",
+        "retry",
+        "correct",
+        "menu"
+      ]
+    },
+    {
+      "unit": "switch",
+      "paths": [
+        "selected",
+        "retry",
+        "correct",
+        "menu"
+      ]
+    },
+    {
+      "unit": "disagree",
+      "paths": [
+        "selected",
+        "retry",
+        "correct",
+        "menu"
+      ]
+    },
+    {
+      "unit": "handoff",
+      "paths": [
+        "selected",
+        "retry",
+        "correct",
+        "menu"
+      ]
+    }
+  ],
+  "errors": []
+}

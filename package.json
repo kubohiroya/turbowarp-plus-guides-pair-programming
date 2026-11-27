@@ -1,0 +1,18 @@
+{
+  "name": "turbowarp-plus-guides-pair-programming",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "prepare:app": "node scripts/prepare.ts",
+    "build": "node scripts/build.ts",
+    "preview": "node scripts/preview.mjs"
+  },
+  "dependencies": {
+    "@kubohiroya/turbowarp-kamishibai-app": "4.0.21",
+    "fflate": "0.8.3",
+    "yaml": "2.9.1"
+  }
+}

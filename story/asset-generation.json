@@ -1,0 +1,20 @@
+{
+  "tool": "OpenAI built-in image_gen.imagegen",
+  "date": "2026-11-27",
+  "transparentBackground": true,
+  "promptNote": "制作条件を記録したプロンプトセット。文字や吹き出しは画像に焼き込まず、教材側で表示する。",
+  "assets": [
+    {
+      "file": "assets/pura.png",
+      "name": "プラ / Pura",
+      "prompt": "Create an original friendly mascot for a Japanese Scratch-like visual programming editor tutorial. A small rounded floating robot, blue-violet and cyan body, white face, expressive dark eyes, white plus symbol on chest, small pencil antenna. Warm smile, one open welcoming hand and the other pointing to the right. Polished two-dimensional cel-shaded illustration with bold clean outlines, readable at small sprite sizes. Full body, centered with generous padding, transparent background. No text, letters, speech bubble, watermark, recognizable existing character, or background scenery.",
+      "reference": null
+    },
+    {
+      "file": "assets/moko.png",
+      "name": "モコ / Moko",
+      "prompt": "Create an original second mascot to match the visual style of the provided blue-violet robot. A soft mint-green rounded cloud/bean creature with an orange neckerchief, expressive eyes, a cheeky curious smile. One hand scratches its head and the other open palm faces left, as a lovable comic partner in a Japanese educational dialogue. A clearly different silhouette from the robot. Polished two-dimensional cel-shaded illustration, bold clean outlines, full body with generous padding, readable at small sprite sizes, transparent background. No text, speech bubble, watermark, scenery, or recognizable existing character.",
+      "reference": "assets/pura.png (style only)"
+    }
+  ]
+}

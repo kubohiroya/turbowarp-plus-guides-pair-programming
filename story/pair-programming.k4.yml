@@ -1,0 +1,1214 @@
+kamishibai: "4.0"
+controls:
+  keymaps:
+    production:
+      Space: navigation.nextAction
+bubbleStyles:
+  lesson:
+    maxWidth: 320
+    textLocale: ja
+    distance: 0
+    tailLength: 8
+assets:
+  PuraIdle:
+    kind: costume
+    target: Pura
+    file: assets/pura.png
+  MokoIdle:
+    kind: costume
+    target: Moko
+    file: assets/moko.png
+  Unit1:
+    kind: costume
+    file: assets/Unit1.svg
+    target: Unit1
+  Unit2:
+    kind: costume
+    file: assets/Unit2.svg
+    target: Unit2
+  Unit3:
+    kind: costume
+    file: assets/Unit3.svg
+    target: Unit3
+  Unit4:
+    kind: costume
+    file: assets/Unit4.svg
+    target: Unit4
+  Unit5:
+    kind: costume
+    file: assets/Unit5.svg
+    target: Unit5
+  Unit6:
+    kind: costume
+    file: assets/Unit6.svg
+    target: Unit6
+  AnswerA:
+    kind: costume
+    file: assets/AnswerA.svg
+    target: AnswerA
+  AnswerB:
+    kind: costume
+    file: assets/AnswerB.svg
+    target: AnswerB
+  NextUnit:
+    kind: costume
+    file: assets/NextUnit.svg
+    target: NextUnit
+  Menu:
+    kind: costume
+    file: assets/Menu.svg
+    target: Menu
+  pair-programmingMenu:
+    kind: backdrop
+    file: assets/pair-programmingMenu.svg
+  pair-programmingButton1:
+    kind: costume
+    file: assets/pair-programmingButton1.svg
+    target: Unit1
+  pair-programmingButton2:
+    kind: costume
+    file: assets/pair-programmingButton2.svg
+    target: Unit2
+  pair-programmingButton3:
+    kind: costume
+    file: assets/pair-programmingButton3.svg
+    target: Unit3
+  pair-programmingButton4:
+    kind: costume
+    file: assets/pair-programmingButton4.svg
+    target: Unit4
+  pair-programmingButton5:
+    kind: costume
+    file: assets/pair-programmingButton5.svg
+    target: Unit5
+  pair-programmingButton6:
+    kind: costume
+    file: assets/pair-programmingButton6.svg
+    target: Unit6
+  Board_pair-programming_roles:
+    kind: backdrop
+    file: assets/Board_pair-programming_roles.svg
+  Quiz_pair-programming_roles:
+    kind: backdrop
+    file: assets/Quiz_pair-programming_roles.svg
+  Recap_pair-programming_roles:
+    kind: backdrop
+    file: assets/Recap_pair-programming_roles.svg
+  Board_pair-programming_goal:
+    kind: backdrop
+    file: assets/Board_pair-programming_goal.svg
+  Quiz_pair-programming_goal:
+    kind: backdrop
+    file: assets/Quiz_pair-programming_goal.svg
+  Recap_pair-programming_goal:
+    kind: backdrop
+    file: assets/Recap_pair-programming_goal.svg
+  Board_pair-programming_talk-edit:
+    kind: backdrop
+    file: assets/Board_pair-programming_talk-edit.svg
+  Quiz_pair-programming_talk-edit:
+    kind: backdrop
+    file: assets/Quiz_pair-programming_talk-edit.svg
+  Recap_pair-programming_talk-edit:
+    kind: backdrop
+    file: assets/Recap_pair-programming_talk-edit.svg
+  Board_pair-programming_switch:
+    kind: backdrop
+    file: assets/Board_pair-programming_switch.svg
+  Quiz_pair-programming_switch:
+    kind: backdrop
+    file: assets/Quiz_pair-programming_switch.svg
+  Recap_pair-programming_switch:
+    kind: backdrop
+    file: assets/Recap_pair-programming_switch.svg
+  Board_pair-programming_disagree:
+    kind: backdrop
+    file: assets/Board_pair-programming_disagree.svg
+  Quiz_pair-programming_disagree:
+    kind: backdrop
+    file: assets/Quiz_pair-programming_disagree.svg
+  Recap_pair-programming_disagree:
+    kind: backdrop
+    file: assets/Recap_pair-programming_disagree.svg
+  Board_pair-programming_handoff:
+    kind: backdrop
+    file: assets/Board_pair-programming_handoff.svg
+  Quiz_pair-programming_handoff:
+    kind: backdrop
+    file: assets/Quiz_pair-programming_handoff.svg
+  Recap_pair-programming_handoff:
+    kind: backdrop
+    file: assets/Recap_pair-programming_handoff.svg
+actors:
+  Pura: PuraIdle
+  Moko: MokoIdle
+  Unit1: Unit1
+  Unit2: Unit2
+  Unit3: Unit3
+  Unit4: Unit4
+  Unit5: Unit5
+  Unit6: Unit6
+  AnswerA: AnswerA
+  AnswerB: AnswerB
+  NextUnit: NextUnit
+  Menu: Menu
+cover:
+  backdrop: pair-programmingMenu
+scenes:
+  menu:
+    - stage: pair-programmingMenu
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - Unit1.show:
+        skin: pair-programmingButton1
+        x: -112
+        y: 55
+        scale: 100
+    - Unit2.show:
+        skin: pair-programmingButton2
+        x: 112
+        y: 55
+        scale: 100
+    - Unit3.show:
+        skin: pair-programmingButton3
+        x: -112
+        y: -12
+        scale: 100
+    - Unit4.show:
+        skin: pair-programmingButton4
+        x: 112
+        y: -12
+        scale: 100
+    - Unit5.show:
+        skin: pair-programmingButton5
+        x: -112
+        y: -79
+        scale: 100
+    - Unit6.show:
+        skin: pair-programmingButton6
+        x: 112
+        y: -79
+        scale: 100
+    - broadcastMessageAndWait: choice:pair-programming_menu
+    - goto: menu
+  roles_intro:
+    - stage: Board_pair-programming_roles
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: ペアプログラミングだ！ プラは左半分、ぼくは右半分。マウスを二つつなごう！
+        seconds: 7.4
+        styles:
+          - lesson
+    - Pura.say:
+        text: 今日は一つの作品の、一つの作業を一緒に進めよう。マウスを動かすのは一人ずつで十分だよ。
+        seconds: 8.3
+        styles:
+          - lesson
+    - Moko.say:
+        text: じゃあぼくがドライバー。プラは助手席でおやつを食べる係？
+        seconds: 5.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: ナビゲーターは行き先を考える係。「星が出る処理はどこ？」「どの動きで直ったと分かる？」と一緒に確かめるよ。
+        seconds: 9.9
+        styles:
+          - lesson
+    - Moko.say:
+        text: ドライバーは言われた通りにクリックするだけ？
+        seconds: 4.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: 操作の意図を共有して、わからないところは聞き返す。どう直すかは二人で決めるんだ。
+        seconds: 7.9
+        styles:
+          - lesson
+    - Moko.say:
+        text: 今日の作品は、Gキーで星を並べる「星あつめ」。まず、そのコードを探します！
+        seconds: 7.4
+        styles:
+          - lesson
+    - Pura.say:
+        text: いいね。「ペア練習」スプライトの黄色い帽子から、星を並べるブロックまでたどろう。
+        seconds: 7.9
+        styles:
+          - lesson
+    - Moko.say:
+        text: その前に、画面のどこで名前を探せるか、ガイドで一緒に確かめよう。
+        seconds: 6.6
+        styles:
+          - lesson
+    - broadcastMessageAndWait: lesson:pair-programming_roles
+    - goto: roles_quiz
+  roles_quiz:
+    - stage: Quiz_pair-programming_roles
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - AnswerA.show:
+        skin: AnswerA
+        x: -112
+        y: -57
+        scale: 100
+    - AnswerB.show:
+        skin: AnswerB
+        x: 112
+        y: -57
+        scale: 100
+    - broadcastMessageAndWait: choice:pair-programming_roles_quiz
+    - goto: roles_quiz
+  roles_retry:
+    - stage: Quiz_pair-programming_roles
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Pura.say:
+        text: 今回は同じ変更を一緒に考える練習。一人が編集し、相手も確認と判断に参加する方を選ぼう。
+        seconds: 8.3
+        styles:
+          - lesson
+    - goto: roles_quiz
+  roles_yes:
+    - stage: Recap_pair-programming_roles
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Pura.say:
+        text: ドライバーが操作し、ナビゲーターが目標と確認を支える。どちらも考える役だよ。
+        seconds: 7.5
+        styles:
+          - lesson
+    - Menu.show:
+        skin: Menu
+        x: 112
+        y: -57
+        scale: 100
+    - NextUnit.show:
+        skin: NextUnit
+        x: -112
+        y: -57
+        scale: 100
+    - broadcastMessageAndWait: choice:pair-programming_roles_yes
+    - goto: menu
+  goal_intro:
+    - stage: Board_pair-programming_goal
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: ぼくの目標は、星をきれいにして、音もつけて、ゲームをだいたい百倍楽しくすること！
+        seconds: 7.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: やりたいことが増えたね。今回は「Gキーを1回押すと、出てくる星が5個から6個になる」に絞ろう。
+        seconds: 9
+        styles:
+          - lesson
+    - Moko.say:
+        text: 六つ目の星に光る音は？
+        seconds: 4.5
+        styles:
+          - lesson
+    - Pura.say:
+        text: 次の候補に書いておこう。目標を小さくすると、いま何を変えたかと、何が原因かを説明しやすい。
+        seconds: 8.7
+        styles:
+          - lesson
+    - Moko.say:
+        text: じゃあ最初にGキーを1回。出てきた星を数えてみる。
+        seconds: 5.4
+        styles:
+          - lesson
+    - Pura.say:
+        text: うん。変更前に数えれば、いまの動きと期待との差を二人で共有できる。練習データの初期値は5だよ。
+        seconds: 9
+        styles:
+          - lesson
+    - Moko.say:
+        text: 直ったかどうかは「おおむね増えた」で判定！
+        seconds: 4.8
+        styles:
+          - lesson
+    - Pura.say:
+        text: 6個になったか、間隔や消える動きは期待通りかを言葉で確かめよう。終わる条件がそろったら編集を始める。
+        seconds: 9.5
+        styles:
+          - lesson
+    - Moko.say:
+        text: 一回でできる目標と、あとで試すアイデアを分けるんだね。
+        seconds: 5.8
+        styles:
+          - lesson
+    - goto: goal_quiz
+  goal_quiz:
+    - stage: Quiz_pair-programming_goal
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - AnswerA.show:
+        skin: AnswerA
+        x: -112
+        y: -57
+        scale: 100
+    - AnswerB.show:
+        skin: AnswerB
+        x: 112
+        y: -57
+        scale: 100
+    - broadcastMessageAndWait: choice:pair-programming_goal_quiz
+    - goto: goal_quiz
+  goal_retry:
+    - stage: Quiz_pair-programming_goal
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Pura.say:
+        text: あとで二人が同じ操作をして、同じ結果を期待できる方を選ぼう。キーと個数が決め手だよ。
+        seconds: 8.2
+        styles:
+          - lesson
+    - goto: goal_quiz
+  goal_yes:
+    - stage: Recap_pair-programming_goal
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Pura.say:
+        text: Gを1回押して、出てくる星を数えれば確認できる。音や別の演出は次の作業目標にできるね。
+        seconds: 8.3
+        styles:
+          - lesson
+    - Menu.show:
+        skin: Menu
+        x: 112
+        y: -57
+        scale: 100
+    - NextUnit.show:
+        skin: NextUnit
+        x: -112
+        y: -57
+        scale: 100
+    - broadcastMessageAndWait: choice:pair-programming_goal_yes
+    - goto: menu
+  talk-edit_intro:
+    - stage: Board_pair-programming_talk-edit
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: ドライバーのモコです。星を増やすために、えーと、間隔を60から600にします！
+        seconds: 7.7
+        styles:
+          - lesson
+    - Pura.say:
+        text: 個数と間隔、どっちを変えると六つ出ると思う？ 呼び出しブロックの定義を見てみよう。
+        seconds: 8
+        styles:
+          - lesson
+    - Moko.say:
+        text: 「星を並べる」の最初は個数。二つ目は間隔。口に出したら、何を変えるかはっきりしたよ。
+        seconds: 8.2
+        styles:
+          - lesson
+    - Pura.say:
+        text: そう。その調子で今からする操作を短く話すと、相手は間違えそうなところをその場で聞ける。
+        seconds: 8.3
+        styles:
+          - lesson
+    - Moko.say:
+        text: では個数を6に、間隔は60のまま。プラ、確認してね。
+        seconds: 5.6
+        styles:
+          - lesson
+    - Pura.say:
+        text: 変えたらGキーを一度押す。星が出るたびに数えて、6個で止まるか、消える動きは同じか見よう。
+        seconds: 8.7
+        styles:
+          - lesson
+    - Moko.say:
+        text: 無言で全部直してから発表すると、なぜ変えたか忘れても相手は教えてくれないね。
+        seconds: 7.5
+        styles:
+          - lesson
+    - Pura.say:
+        text: 一つ変えたときに一緒に見る方が早いこともある。今はブロックの数値を一つだけ変えてみよう。
+        seconds: 8.5
+        styles:
+          - lesson
+    - Moko.say:
+        text: 「ペア練習」を開くよ。遊ぶ人はドライバー役、画面のプラはナビゲーター役！
+        seconds: 7.2
+        styles:
+          - lesson
+    - broadcastMessageAndWait: lesson:pair-programming_talk-edit
+    - goto: talk-edit_quiz
+  talk-edit_quiz:
+    - stage: Quiz_pair-programming_talk-edit
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - AnswerA.show:
+        skin: AnswerA
+        x: -112
+        y: -57
+        scale: 100
+    - AnswerB.show:
+        skin: AnswerB
+        x: 112
+        y: -57
+        scale: 100
+    - broadcastMessageAndWait: choice:pair-programming_talk-edit_quiz
+    - goto: talk-edit_quiz
+  talk-edit_retry:
+    - stage: Quiz_pair-programming_talk-edit
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Pura.say:
+        text: 相手が「目標に関係する値だけを変えた」と確認できる説明を選ぼう。
+        seconds: 6.6
+        styles:
+          - lesson
+    - goto: talk-edit_quiz
+  talk-edit_yes:
+    - stage: Recap_pair-programming_talk-edit
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Pura.say:
+        text: 何を変えるかと、何を保つかを声に出すと、相手が操作を確かめられる。
+        seconds: 6.7
+        styles:
+          - lesson
+    - Menu.show:
+        skin: Menu
+        x: 112
+        y: -57
+        scale: 100
+    - NextUnit.show:
+        skin: NextUnit
+        x: -112
+        y: -57
+        scale: 100
+    - broadcastMessageAndWait: choice:pair-programming_talk-edit_yes
+    - goto: menu
+  switch_intro:
+    - stage: Board_pair-programming_switch
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: そろそろ交代？ はい、どうぞ！ たぶん何か変えたので見てね。
+        seconds: 6.2
+        styles:
+          - lesson
+    - Pura.say:
+        text: 受け取る前に、今の状態を三つだけ教えて。何を変えた？ 何を確認した？ 次は何をする？
+        seconds: 8.2
+        styles:
+          - lesson
+    - Moko.say:
+        text: 個数を6にした。Gで出現を数えた。次は、星が重なるなら間隔を見直す。
+        seconds: 6.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: 助かる。ではプラがドライバー、モコがナビゲーター。修正は試運転まで終わったから、ここで交代しやすいね。
+        seconds: 9.6
+        styles:
+          - lesson
+    - Moko.say:
+        text: 今度はぼくが「間隔を触ると個数も変わりそう？」って確認する係。
+        seconds: 6.4
+        styles:
+          - lesson
+    - Pura.say:
+        text: もし調査の途中なら、どこまで分かったかを伝える。「まだ再現できていない」も大事な情報だよ。
+        seconds: 8.7
+        styles:
+          - lesson
+    - Moko.say:
+        text: 時間で交代してもいい？
+        seconds: 4.5
+        styles:
+          - lesson
+    - Pura.say:
+        text: うん。試運転の後、問題の区切り、決めた時間のどれでもいい。片方がずっと操作していたら交代を提案しよう。
+        seconds: 9.6
+        styles:
+          - lesson
+    - Moko.say:
+        text: 渡すのはマウスだけじゃない。現在地も一緒に渡すんだ。
+        seconds: 5.6
+        styles:
+          - lesson
+    - goto: switch_quiz
+  switch_quiz:
+    - stage: Quiz_pair-programming_switch
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - AnswerA.show:
+        skin: AnswerA
+        x: -112
+        y: -57
+        scale: 100
+    - AnswerB.show:
+        skin: AnswerB
+        x: 112
+        y: -57
+        scale: 100
+    - broadcastMessageAndWait: choice:pair-programming_switch_quiz
+    - goto: switch_quiz
+  switch_retry:
+    - stage: Quiz_pair-programming_switch
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Pura.say:
+        text: 次の人が同じ調査をやり直さずに済む情報はどちらか考えよう。
+        seconds: 6.1
+        styles:
+          - lesson
+    - goto: switch_quiz
+  switch_yes:
+    - stage: Recap_pair-programming_switch
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Pura.say:
+        text: 作業の状態を短く共有すると、操作を受け取った人が同じ目標を続けられる。
+        seconds: 7
+        styles:
+          - lesson
+    - Menu.show:
+        skin: Menu
+        x: 112
+        y: -57
+        scale: 100
+    - NextUnit.show:
+        skin: NextUnit
+        x: -112
+        y: -57
+        scale: 100
+    - broadcastMessageAndWait: choice:pair-programming_switch_yes
+    - goto: menu
+  disagree_intro:
+    - stage: Board_pair-programming_disagree
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 星が窮屈だ。全部ちょっと左へ寄せよう。ぼくは左派！
+        seconds: 5.4
+        styles:
+          - lesson
+    - Pura.say:
+        text: ぼくは間隔を少し狭める案。どちらでも6個が収まるか、まずそれぞれの予想を話そう。
+        seconds: 7.9
+        styles:
+          - lesson
+    - Moko.say:
+        text: 開始位置を左へ動かすと、最後の星も左にずれる。左端からはみ出ないか気になるな。
+        seconds: 7.7
+        styles:
+          - lesson
+    - Pura.say:
+        text: 間隔を狭くすると、最初の星は同じ位置。最後は内側へ寄るけど、星が重ならないか見よう。
+        seconds: 8.2
+        styles:
+          - lesson
+    - Moko.say:
+        text: 両方同時に直せば二人の意見が通る！
+        seconds: 4.5
+        styles:
+          - lesson
+    - Pura.say:
+        text: 何が効いたか分からなくなるよ。まず間隔だけ60から50にしてGで試す。次に値を戻し、開始位置だけ試す。
+        seconds: 9.6
+        styles:
+          - lesson
+    - Moko.say:
+        text: 比べるものは、星が6個出るか、重ならないか、画面に収まるか。
+        seconds: 6.2
+        styles:
+          - lesson
+    - Pura.say:
+        text: その観察をもとに、今回は必要な変更を選ぶ。合意できないときは、調べたいことを一つ残して次へ進んでもいい。
+        seconds: 9.8
+        styles:
+          - lesson
+    - Moko.say:
+        text: 議論に勝つより、何が起きたか同じ画面で見られる方が助かるね。
+        seconds: 6.2
+        styles:
+          - lesson
+    - goto: disagree_quiz
+  disagree_quiz:
+    - stage: Quiz_pair-programming_disagree
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - AnswerA.show:
+        skin: AnswerA
+        x: -112
+        y: -57
+        scale: 100
+    - AnswerB.show:
+        skin: AnswerB
+        x: 112
+        y: -57
+        scale: 100
+    - broadcastMessageAndWait: choice:pair-programming_disagree_quiz
+    - goto: disagree_quiz
+  disagree_retry:
+    - stage: Quiz_pair-programming_disagree
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Pura.say:
+        text: 二つ同時に変えると、どちらの変更で動きが変わったか分かりにくい。試す条件をそろえよう。
+        seconds: 8.3
+        styles:
+          - lesson
+    - goto: disagree_quiz
+  disagree_yes:
+    - stage: Recap_pair-programming_disagree
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Pura.say:
+        text: 変える値を一つにして、同じキー操作と同じ確認項目で比べれば、二人で結果を読める。
+        seconds: 7.9
+        styles:
+          - lesson
+    - Menu.show:
+        skin: Menu
+        x: 112
+        y: -57
+        scale: 100
+    - NextUnit.show:
+        skin: NextUnit
+        x: -112
+        y: -57
+        scale: 100
+    - broadcastMessageAndWait: choice:pair-programming_disagree_yes
+    - goto: menu
+  handoff_intro:
+    - stage: Board_pair-programming_handoff
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Moko.say:
+        text: 完成！ 結果は「モコがすごい」で記録しておくね。
+        seconds: 5.3
+        styles:
+          - lesson
+    - Pura.say:
+        text: 次に読む人が再現できるようにしよう。「星の個数を5から6へ変えた。Gを1回押して6個を確認」なら分かるよ。
+        seconds: 9.9
+        styles:
+          - lesson
+    - Moko.say:
+        text: まだ話したいことがあった。音は次回。それも別にメモする。
+        seconds: 5.9
+        styles:
+          - lesson
+    - Pura.say:
+        text: そう。最後に二人で作品を動かして、保存する人と保存先を確認しよう。
+        seconds: 6.7
+        styles:
+          - lesson
+    - Moko.say:
+        text: 画面共有でもできる？ こっちは文字が小さくて、個数の欄が分からないんだけど。
+        seconds: 7.5
+        styles:
+          - lesson
+    - Pura.say:
+        text: 映している画面を見やすくして、対象のスプライト名とブロック名を言う。遠隔操作がなくても、口頭で確認や交代はできる。
+        seconds: 10.6
+        styles:
+          - lesson
+    - Moko.say:
+        text: 交代するときは相手が同じ版を開いたか確認するね。二つのコピーを同時に勝手に直さない。
+        seconds: 8.2
+        styles:
+          - lesson
+    - Pura.say:
+        text: うん。共有先がある場合は、差分を一緒に確認してから送る。認証画面や個人情報が出るときは画面共有を一時停止しよう。
+        seconds: 10.4
+        styles:
+          - lesson
+    - Moko.say:
+        text: 前の版と比べられるし、次のペアにも続きが渡せる。星も仕事も、並びが見えたね！
+        seconds: 7.5
+        styles:
+          - lesson
+    - goto: handoff_quiz
+  handoff_quiz:
+    - stage: Quiz_pair-programming_handoff
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - AnswerA.show:
+        skin: AnswerA
+        x: -112
+        y: -57
+        scale: 100
+    - AnswerB.show:
+        skin: AnswerB
+        x: 112
+        y: -57
+        scale: 100
+    - broadcastMessageAndWait: choice:pair-programming_handoff_quiz
+    - goto: handoff_quiz
+  handoff_retry:
+    - stage: Quiz_pair-programming_handoff
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Pura.say:
+        text: 別の人が同じ操作をして確かめられる方を選ぼう。期待した数も記録できるよ。
+        seconds: 7.2
+        styles:
+          - lesson
+    - goto: handoff_quiz
+  handoff_yes:
+    - stage: Recap_pair-programming_handoff
+    - Unit1.hide: {}
+    - Unit2.hide: {}
+    - Unit3.hide: {}
+    - Unit4.hide: {}
+    - Unit5.hide: {}
+    - Unit6.hide: {}
+    - AnswerA.hide: {}
+    - AnswerB.hide: {}
+    - NextUnit.hide: {}
+    - Menu.hide: {}
+    - Pura.show:
+        skin: PuraIdle
+        x: -135
+        y: -110
+        scale: 9.5
+    - Moko.show:
+        skin: MokoIdle
+        x: 135
+        y: -110
+        scale: 9.5
+    - Pura.say:
+        text: 確認した操作と結果を残せば、引き継ぐ人も動作を確かめられる。残った作業は別に書こう。
+        seconds: 8.2
+        styles:
+          - lesson
+    - Menu.show:
+        skin: Menu
+        x: 112
+        y: -57
+        scale: 100
+    - broadcastMessageAndWait: choice:pair-programming_handoff_yes
+    - goto: menu
