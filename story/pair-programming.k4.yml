@@ -3,12 +3,6 @@ controls:
   keymaps:
     production:
       Space: navigation.nextAction
-bubbleStyles:
-  lesson:
-    maxWidth: 320
-    textLocale: ja
-    distance: 0
-    tailLength: 8
 assets:
   PuraIdle:
     kind: costume
@@ -58,6 +52,10 @@ assets:
     kind: costume
     file: assets/Menu.svg
     target: Menu
+  AdvanceCue:
+    kind: costume
+    file: assets/AdvanceCue.svg
+    target: AdvanceCue
   pair-programmingMenu:
     kind: backdrop
     file: assets/pair-programmingMenu.svg
@@ -152,6 +150,7 @@ actors:
   AnswerB: AnswerB
   NextUnit: NextUnit
   Menu: Menu
+  AdvanceCue: AdvanceCue
 cover:
   backdrop: pair-programmingMenu
 scenes:
@@ -167,6 +166,7 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
+    - AdvanceCue.hide: {}
     - Pura.hide: {}
     - Moko.hide: {}
     - Unit1.show:
@@ -213,6 +213,17 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:0
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - Pura.show:
         skin: PuraIdle
         x: -135
@@ -223,51 +234,30 @@ scenes:
         x: 135
         y: -110
         scale: 9.5
-    - Moko.say:
-        text: ペアプログラミングだ！ プラは左半分、ぼくは右半分。マウスを二つつなごう！
-        seconds: 7.4
-        styles:
-          - lesson
-    - Pura.say:
-        text: 今日は一つの作品の、一つの作業を一緒に進めよう。マウスを動かすのは一人ずつで十分だよ。
-        seconds: 8.3
-        styles:
-          - lesson
-    - Moko.say:
-        text: じゃあぼくがドライバー。プラは助手席でおやつを食べる係？
-        seconds: 5.9
-        styles:
-          - lesson
-    - Pura.say:
-        text: ナビゲーターは行き先を考える係。「星が出る処理はどこ？」「どの動きで直ったと分かる？」と一緒に確かめるよ。
-        seconds: 9.9
-        styles:
-          - lesson
-    - Moko.say:
-        text: ドライバーは言われた通りにクリックするだけ？
-        seconds: 4.9
-        styles:
-          - lesson
-    - Pura.say:
-        text: 操作の意図を共有して、わからないところは聞き返す。どう直すかは二人で決めるんだ。
-        seconds: 7.9
-        styles:
-          - lesson
-    - Moko.say:
-        text: 今日の作品は、Gキーで星を並べる「星あつめ」。まず、そのコードを探します！
-        seconds: 7.4
-        styles:
-          - lesson
-    - Pura.say:
-        text: いいね。「ペア練習」スプライトの黄色い帽子から、星を並べるブロックまでたどろう。
-        seconds: 7.9
-        styles:
-          - lesson
-    - Moko.say:
-        text: その前に、画面のどこで名前を探せるか、ガイドで一緒に確かめよう。
-        seconds: 6.6
-        styles:
-          - lesson
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:1
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:2
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:3
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:4
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:5
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:6
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:7
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:8
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:9
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - broadcastMessageAndWait: lesson:pair-programming_roles
     - goto: roles_quiz
   roles_quiz:
@@ -282,16 +272,9 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
-    - Pura.show:
-        skin: PuraIdle
-        x: -135
-        y: -110
-        scale: 9.5
-    - Moko.show:
-        skin: MokoIdle
-        x: 135
-        y: -110
-        scale: 9.5
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
     - AnswerA.show:
         skin: AnswerA
         x: -112
@@ -316,21 +299,22 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
     - Pura.show:
         skin: PuraIdle
         x: -135
         y: -110
         scale: 9.5
-    - Moko.show:
-        skin: MokoIdle
-        x: 135
-        y: -110
-        scale: 9.5
-    - Pura.say:
-        text: 今回は同じ変更を一緒に考える練習。一人が編集し、相手も確認と判断に参加する方を選ぼう。
-        seconds: 8.3
-        styles:
-          - lesson
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:10
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - goto: roles_quiz
   roles_yes:
     - stage: Recap_pair-programming_roles
@@ -344,21 +328,32 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:0
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - Pura.show:
         skin: PuraIdle
         x: -135
         y: -110
         scale: 9.5
-    - Moko.show:
-        skin: MokoIdle
-        x: 135
-        y: -110
-        scale: 9.5
-    - Pura.say:
-        text: ドライバーが操作し、ナビゲーターが目標と確認を支える。どちらも考える役だよ。
-        seconds: 7.5
-        styles:
-          - lesson
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:11
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
     - Menu.show:
         skin: Menu
         x: 112
@@ -383,6 +378,17 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:0
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - Pura.show:
         skin: PuraIdle
         x: -135
@@ -393,51 +399,30 @@ scenes:
         x: 135
         y: -110
         scale: 9.5
-    - Moko.say:
-        text: ぼくの目標は、星をきれいにして、音もつけて、ゲームをだいたい百倍楽しくすること！
-        seconds: 7.9
-        styles:
-          - lesson
-    - Pura.say:
-        text: やりたいことが増えたね。今回は「Gキーを1回押すと、出てくる星が5個から6個になる」に絞ろう。
-        seconds: 9
-        styles:
-          - lesson
-    - Moko.say:
-        text: 六つ目の星に光る音は？
-        seconds: 4.5
-        styles:
-          - lesson
-    - Pura.say:
-        text: 次の候補に書いておこう。目標を小さくすると、いま何を変えたかと、何が原因かを説明しやすい。
-        seconds: 8.7
-        styles:
-          - lesson
-    - Moko.say:
-        text: じゃあ最初にGキーを1回。出てきた星を数えてみる。
-        seconds: 5.4
-        styles:
-          - lesson
-    - Pura.say:
-        text: うん。変更前に数えれば、いまの動きと期待との差を二人で共有できる。練習データの初期値は5だよ。
-        seconds: 9
-        styles:
-          - lesson
-    - Moko.say:
-        text: 直ったかどうかは「おおむね増えた」で判定！
-        seconds: 4.8
-        styles:
-          - lesson
-    - Pura.say:
-        text: 6個になったか、間隔や消える動きは期待通りかを言葉で確かめよう。終わる条件がそろったら編集を始める。
-        seconds: 9.5
-        styles:
-          - lesson
-    - Moko.say:
-        text: 一回でできる目標と、あとで試すアイデアを分けるんだね。
-        seconds: 5.8
-        styles:
-          - lesson
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:12
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:13
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:14
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:15
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:16
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:17
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:18
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:19
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:20
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - goto: goal_quiz
   goal_quiz:
     - stage: Quiz_pair-programming_goal
@@ -451,16 +436,9 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
-    - Pura.show:
-        skin: PuraIdle
-        x: -135
-        y: -110
-        scale: 9.5
-    - Moko.show:
-        skin: MokoIdle
-        x: 135
-        y: -110
-        scale: 9.5
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
     - AnswerA.show:
         skin: AnswerA
         x: -112
@@ -485,21 +463,22 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
     - Pura.show:
         skin: PuraIdle
         x: -135
         y: -110
         scale: 9.5
-    - Moko.show:
-        skin: MokoIdle
-        x: 135
-        y: -110
-        scale: 9.5
-    - Pura.say:
-        text: あとで二人が同じ操作をして、同じ結果を期待できる方を選ぼう。キーと個数が決め手だよ。
-        seconds: 8.2
-        styles:
-          - lesson
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:21
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - goto: goal_quiz
   goal_yes:
     - stage: Recap_pair-programming_goal
@@ -513,21 +492,32 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:0
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - Pura.show:
         skin: PuraIdle
         x: -135
         y: -110
         scale: 9.5
-    - Moko.show:
-        skin: MokoIdle
-        x: 135
-        y: -110
-        scale: 9.5
-    - Pura.say:
-        text: Gを1回押して、出てくる星を数えれば確認できる。音や別の演出は次の作業目標にできるね。
-        seconds: 8.3
-        styles:
-          - lesson
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:22
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
     - Menu.show:
         skin: Menu
         x: 112
@@ -552,6 +542,17 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:0
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - Pura.show:
         skin: PuraIdle
         x: -135
@@ -562,51 +563,30 @@ scenes:
         x: 135
         y: -110
         scale: 9.5
-    - Moko.say:
-        text: ドライバーのモコです。星を増やすために、えーと、間隔を60から600にします！
-        seconds: 7.7
-        styles:
-          - lesson
-    - Pura.say:
-        text: 個数と間隔、どっちを変えると六つ出ると思う？ 呼び出しブロックの定義を見てみよう。
-        seconds: 8
-        styles:
-          - lesson
-    - Moko.say:
-        text: 「星を並べる」の最初は個数。二つ目は間隔。口に出したら、何を変えるかはっきりしたよ。
-        seconds: 8.2
-        styles:
-          - lesson
-    - Pura.say:
-        text: そう。その調子で今からする操作を短く話すと、相手は間違えそうなところをその場で聞ける。
-        seconds: 8.3
-        styles:
-          - lesson
-    - Moko.say:
-        text: では個数を6に、間隔は60のまま。プラ、確認してね。
-        seconds: 5.6
-        styles:
-          - lesson
-    - Pura.say:
-        text: 変えたらGキーを一度押す。星が出るたびに数えて、6個で止まるか、消える動きは同じか見よう。
-        seconds: 8.7
-        styles:
-          - lesson
-    - Moko.say:
-        text: 無言で全部直してから発表すると、なぜ変えたか忘れても相手は教えてくれないね。
-        seconds: 7.5
-        styles:
-          - lesson
-    - Pura.say:
-        text: 一つ変えたときに一緒に見る方が早いこともある。今はブロックの数値を一つだけ変えてみよう。
-        seconds: 8.5
-        styles:
-          - lesson
-    - Moko.say:
-        text: 「ペア練習」を開くよ。遊ぶ人はドライバー役、画面のプラはナビゲーター役！
-        seconds: 7.2
-        styles:
-          - lesson
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:23
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:24
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:25
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:26
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:27
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:28
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:29
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:30
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:31
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - broadcastMessageAndWait: lesson:pair-programming_talk-edit
     - goto: talk-edit_quiz
   talk-edit_quiz:
@@ -621,16 +601,9 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
-    - Pura.show:
-        skin: PuraIdle
-        x: -135
-        y: -110
-        scale: 9.5
-    - Moko.show:
-        skin: MokoIdle
-        x: 135
-        y: -110
-        scale: 9.5
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
     - AnswerA.show:
         skin: AnswerA
         x: -112
@@ -655,21 +628,22 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
     - Pura.show:
         skin: PuraIdle
         x: -135
         y: -110
         scale: 9.5
-    - Moko.show:
-        skin: MokoIdle
-        x: 135
-        y: -110
-        scale: 9.5
-    - Pura.say:
-        text: 相手が「目標に関係する値だけを変えた」と確認できる説明を選ぼう。
-        seconds: 6.6
-        styles:
-          - lesson
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:32
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - goto: talk-edit_quiz
   talk-edit_yes:
     - stage: Recap_pair-programming_talk-edit
@@ -683,21 +657,32 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:0
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - Pura.show:
         skin: PuraIdle
         x: -135
         y: -110
         scale: 9.5
-    - Moko.show:
-        skin: MokoIdle
-        x: 135
-        y: -110
-        scale: 9.5
-    - Pura.say:
-        text: 何を変えるかと、何を保つかを声に出すと、相手が操作を確かめられる。
-        seconds: 6.7
-        styles:
-          - lesson
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:33
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
     - Menu.show:
         skin: Menu
         x: 112
@@ -722,6 +707,17 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:0
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - Pura.show:
         skin: PuraIdle
         x: -135
@@ -732,51 +728,30 @@ scenes:
         x: 135
         y: -110
         scale: 9.5
-    - Moko.say:
-        text: そろそろ交代？ はい、どうぞ！ たぶん何か変えたので見てね。
-        seconds: 6.2
-        styles:
-          - lesson
-    - Pura.say:
-        text: 受け取る前に、今の状態を三つだけ教えて。何を変えた？ 何を確認した？ 次は何をする？
-        seconds: 8.2
-        styles:
-          - lesson
-    - Moko.say:
-        text: 個数を6にした。Gで出現を数えた。次は、星が重なるなら間隔を見直す。
-        seconds: 6.9
-        styles:
-          - lesson
-    - Pura.say:
-        text: 助かる。ではプラがドライバー、モコがナビゲーター。修正は試運転まで終わったから、ここで交代しやすいね。
-        seconds: 9.6
-        styles:
-          - lesson
-    - Moko.say:
-        text: 今度はぼくが「間隔を触ると個数も変わりそう？」って確認する係。
-        seconds: 6.4
-        styles:
-          - lesson
-    - Pura.say:
-        text: もし調査の途中なら、どこまで分かったかを伝える。「まだ再現できていない」も大事な情報だよ。
-        seconds: 8.7
-        styles:
-          - lesson
-    - Moko.say:
-        text: 時間で交代してもいい？
-        seconds: 4.5
-        styles:
-          - lesson
-    - Pura.say:
-        text: うん。試運転の後、問題の区切り、決めた時間のどれでもいい。片方がずっと操作していたら交代を提案しよう。
-        seconds: 9.6
-        styles:
-          - lesson
-    - Moko.say:
-        text: 渡すのはマウスだけじゃない。現在地も一緒に渡すんだ。
-        seconds: 5.6
-        styles:
-          - lesson
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:34
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:35
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:36
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:37
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:38
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:39
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:40
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:41
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:42
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - goto: switch_quiz
   switch_quiz:
     - stage: Quiz_pair-programming_switch
@@ -790,16 +765,9 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
-    - Pura.show:
-        skin: PuraIdle
-        x: -135
-        y: -110
-        scale: 9.5
-    - Moko.show:
-        skin: MokoIdle
-        x: 135
-        y: -110
-        scale: 9.5
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
     - AnswerA.show:
         skin: AnswerA
         x: -112
@@ -824,21 +792,22 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
     - Pura.show:
         skin: PuraIdle
         x: -135
         y: -110
         scale: 9.5
-    - Moko.show:
-        skin: MokoIdle
-        x: 135
-        y: -110
-        scale: 9.5
-    - Pura.say:
-        text: 次の人が同じ調査をやり直さずに済む情報はどちらか考えよう。
-        seconds: 6.1
-        styles:
-          - lesson
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:43
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - goto: switch_quiz
   switch_yes:
     - stage: Recap_pair-programming_switch
@@ -852,21 +821,32 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:0
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - Pura.show:
         skin: PuraIdle
         x: -135
         y: -110
         scale: 9.5
-    - Moko.show:
-        skin: MokoIdle
-        x: 135
-        y: -110
-        scale: 9.5
-    - Pura.say:
-        text: 作業の状態を短く共有すると、操作を受け取った人が同じ目標を続けられる。
-        seconds: 7
-        styles:
-          - lesson
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:44
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
     - Menu.show:
         skin: Menu
         x: 112
@@ -891,6 +871,17 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:0
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - Pura.show:
         skin: PuraIdle
         x: -135
@@ -901,51 +892,30 @@ scenes:
         x: 135
         y: -110
         scale: 9.5
-    - Moko.say:
-        text: 星が窮屈だ。全部ちょっと左へ寄せよう。ぼくは左派！
-        seconds: 5.4
-        styles:
-          - lesson
-    - Pura.say:
-        text: ぼくは間隔を少し狭める案。どちらでも6個が収まるか、まずそれぞれの予想を話そう。
-        seconds: 7.9
-        styles:
-          - lesson
-    - Moko.say:
-        text: 開始位置を左へ動かすと、最後の星も左にずれる。左端からはみ出ないか気になるな。
-        seconds: 7.7
-        styles:
-          - lesson
-    - Pura.say:
-        text: 間隔を狭くすると、最初の星は同じ位置。最後は内側へ寄るけど、星が重ならないか見よう。
-        seconds: 8.2
-        styles:
-          - lesson
-    - Moko.say:
-        text: 両方同時に直せば二人の意見が通る！
-        seconds: 4.5
-        styles:
-          - lesson
-    - Pura.say:
-        text: 何が効いたか分からなくなるよ。まず間隔だけ60から50にしてGで試す。次に値を戻し、開始位置だけ試す。
-        seconds: 9.6
-        styles:
-          - lesson
-    - Moko.say:
-        text: 比べるものは、星が6個出るか、重ならないか、画面に収まるか。
-        seconds: 6.2
-        styles:
-          - lesson
-    - Pura.say:
-        text: その観察をもとに、今回は必要な変更を選ぶ。合意できないときは、調べたいことを一つ残して次へ進んでもいい。
-        seconds: 9.8
-        styles:
-          - lesson
-    - Moko.say:
-        text: 議論に勝つより、何が起きたか同じ画面で見られる方が助かるね。
-        seconds: 6.2
-        styles:
-          - lesson
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:45
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:46
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:47
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:48
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:49
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:50
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:51
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:52
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:53
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - goto: disagree_quiz
   disagree_quiz:
     - stage: Quiz_pair-programming_disagree
@@ -959,16 +929,9 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
-    - Pura.show:
-        skin: PuraIdle
-        x: -135
-        y: -110
-        scale: 9.5
-    - Moko.show:
-        skin: MokoIdle
-        x: 135
-        y: -110
-        scale: 9.5
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
     - AnswerA.show:
         skin: AnswerA
         x: -112
@@ -993,21 +956,22 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
     - Pura.show:
         skin: PuraIdle
         x: -135
         y: -110
         scale: 9.5
-    - Moko.show:
-        skin: MokoIdle
-        x: 135
-        y: -110
-        scale: 9.5
-    - Pura.say:
-        text: 二つ同時に変えると、どちらの変更で動きが変わったか分かりにくい。試す条件をそろえよう。
-        seconds: 8.3
-        styles:
-          - lesson
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:54
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - goto: disagree_quiz
   disagree_yes:
     - stage: Recap_pair-programming_disagree
@@ -1021,21 +985,32 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:0
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - Pura.show:
         skin: PuraIdle
         x: -135
         y: -110
         scale: 9.5
-    - Moko.show:
-        skin: MokoIdle
-        x: 135
-        y: -110
-        scale: 9.5
-    - Pura.say:
-        text: 変える値を一つにして、同じキー操作と同じ確認項目で比べれば、二人で結果を読める。
-        seconds: 7.9
-        styles:
-          - lesson
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:55
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
     - Menu.show:
         skin: Menu
         x: 112
@@ -1060,6 +1035,17 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:0
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - Pura.show:
         skin: PuraIdle
         x: -135
@@ -1070,51 +1056,30 @@ scenes:
         x: 135
         y: -110
         scale: 9.5
-    - Moko.say:
-        text: 完成！ 結果は「モコがすごい」で記録しておくね。
-        seconds: 5.3
-        styles:
-          - lesson
-    - Pura.say:
-        text: 次に読む人が再現できるようにしよう。「星の個数を5から6へ変えた。Gを1回押して6個を確認」なら分かるよ。
-        seconds: 9.9
-        styles:
-          - lesson
-    - Moko.say:
-        text: まだ話したいことがあった。音は次回。それも別にメモする。
-        seconds: 5.9
-        styles:
-          - lesson
-    - Pura.say:
-        text: そう。最後に二人で作品を動かして、保存する人と保存先を確認しよう。
-        seconds: 6.7
-        styles:
-          - lesson
-    - Moko.say:
-        text: 画面共有でもできる？ こっちは文字が小さくて、個数の欄が分からないんだけど。
-        seconds: 7.5
-        styles:
-          - lesson
-    - Pura.say:
-        text: 映している画面を見やすくして、対象のスプライト名とブロック名を言う。遠隔操作がなくても、口頭で確認や交代はできる。
-        seconds: 10.6
-        styles:
-          - lesson
-    - Moko.say:
-        text: 交代するときは相手が同じ版を開いたか確認するね。二つのコピーを同時に勝手に直さない。
-        seconds: 8.2
-        styles:
-          - lesson
-    - Pura.say:
-        text: うん。共有先がある場合は、差分を一緒に確認してから送る。認証画面や個人情報が出るときは画面共有を一時停止しよう。
-        seconds: 10.4
-        styles:
-          - lesson
-    - Moko.say:
-        text: 前の版と比べられるし、次のペアにも続きが渡せる。星も仕事も、並びが見えたね！
-        seconds: 7.5
-        styles:
-          - lesson
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:56
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:57
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:58
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:59
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:60
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:61
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:62
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:63
+    - broadcastMessageAndWait: reading:clear
+    - broadcastMessageAndWait: reading:64
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - goto: handoff_quiz
   handoff_quiz:
     - stage: Quiz_pair-programming_handoff
@@ -1128,16 +1093,9 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
-    - Pura.show:
-        skin: PuraIdle
-        x: -135
-        y: -110
-        scale: 9.5
-    - Moko.show:
-        skin: MokoIdle
-        x: 135
-        y: -110
-        scale: 9.5
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
     - AnswerA.show:
         skin: AnswerA
         x: -112
@@ -1162,21 +1120,22 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
     - Pura.show:
         skin: PuraIdle
         x: -135
         y: -110
         scale: 9.5
-    - Moko.show:
-        skin: MokoIdle
-        x: 135
-        y: -110
-        scale: 9.5
-    - Pura.say:
-        text: 別の人が同じ操作をして確かめられる方を選ぼう。期待した数も記録できるよ。
-        seconds: 7.2
-        styles:
-          - lesson
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:65
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - goto: handoff_quiz
   handoff_yes:
     - stage: Recap_pair-programming_handoff
@@ -1190,21 +1149,32 @@ scenes:
     - AnswerB.hide: {}
     - NextUnit.hide: {}
     - Menu.hide: {}
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:0
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
     - Pura.show:
         skin: PuraIdle
         x: -135
         y: -110
         scale: 9.5
-    - Moko.show:
-        skin: MokoIdle
-        x: 135
-        y: -110
-        scale: 9.5
-    - Pura.say:
-        text: 確認した操作と結果を残せば、引き継ぐ人も動作を確かめられる。残った作業は別に書こう。
-        seconds: 8.2
-        styles:
-          - lesson
+    - AdvanceCue.show:
+        skin: AdvanceCue
+        x: 220
+        y: -151
+        scale: 100
+    - broadcastMessageAndWait: reading:66
+    - broadcastMessageAndWait: reading:clear
+    - AdvanceCue.hide: {}
+    - Pura.hide: {}
+    - Moko.hide: {}
     - Menu.show:
         skin: Menu
         x: 112

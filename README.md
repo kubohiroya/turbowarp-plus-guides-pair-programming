@@ -9,6 +9,8 @@ Scratchユーザーが小さな修正を二人で進めるためのガイドで�
 
 文書は Node.js 24以上で `npm run preview` を実行し、http://127.0.0.1:8799/ から読めます。SB3はTurboWarp Plus Editorで開きます。実行画面を引出しに表示し、緑の旗を押すと単元メニューが出ます。
 
+文章を読む場面ではプラとモコが隠れます。▼が点滅したらステージをクリックすると先へ進みます。Spaceでも進めます。
+
 ## 再生成
 
 ```sh
@@ -19,4 +21,4 @@ npm run build
 
 公式App 4.0.21のベースとbuilderを使います。台本から素材SVG、`story/pair-programming.k4.yml`、配布用SB3、生成記録を再生成します。GuideはEditorの組み込み機能を使います。
 
-権利と素材の由来は [NOTICE.md](NOTICE.md)、公開Editorでの検証は [verification/playback.json](verification/playback.json) にあります。
+権利と素材の由来は [NOTICE.md](NOTICE.md)、公開Editorでの検証は [読み進め方の検証](verification/reader-pacing.json) にあります。

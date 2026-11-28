@@ -1,0 +1,19 @@
+{
+  "ok": true,
+  "headless": true,
+  "editorRevision": "b8fd5dbe6a0c4147f0fdb83f510c2c1bc0496f65",
+  "launchOptions": {
+    "twPlusStandardLayout": "1"
+  },
+  "artifact": {
+    "filename": "pair-programming-4.0.sb3",
+    "bytes": 5261459,
+    "sha256": "f613f21328c3c04ac7cc2786c07011115255fe98080b63a4082e65cf92657ea0"
+  },
+  "checks": [
+    "backdrop-only reading holds with both actors hidden and the cue blinking",
+    "speech holds past the old timeout; clicking the cue and Space each replace one bubble",
+    "the Guide owns its interaction while the advance cue is hidden",
+    "quiz and recap are readable without avatars; wrong answer retries and menu navigation still works"
+  ]
+}
